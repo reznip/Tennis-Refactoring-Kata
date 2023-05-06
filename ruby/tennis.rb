@@ -11,10 +11,10 @@ class TennisGame
   end
   
   def score
-    if (@player1_points < 4 and @player2_points < 4) and (@player1_points + @player2_points < 6)
-      @point_system = ["Love", "Fifteen", "Thirty", "Forty"]
-      s = @point_system[@player1_points]
-      @player1_points == @player2_points ? s + "-All" : s + "-" + @point_system[@player2_points]
+      point_system = ["Love", "Fifteen", "Thirty", "Forty"]
+      player1_score = point_system[@player1_points]
+      player2_score = point_system[@player2_points]
+      @player1_points == @player2_points ? player1_score + "-All" : player1_score + "-" + player2_score
     else
       if (@player1_points == @player2_points)
         "Deuce"

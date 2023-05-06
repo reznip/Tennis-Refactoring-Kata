@@ -1,4 +1,33 @@
 class TennisGame
+  def initialize(player1Name, player2Name)
+    @player1_name = player1Name
+    @player2_name = player2Name
+    @player1_points = 0
+    @player2_points = 0
+  end
+      
+  def won_point(n)
+    if n == @player1_name
+        @player1_points += 1
+    else
+        @player2_points += 1
+    end
+  end
+  
+  def score
+    if (@player1_points < 4 and @player2_points < 4) and (@player1_points + @player2_points < 6)
+      p = ["Love", "Fifteen", "Thirty", "Forty"]
+      s = p[@player1_points]
+      @player1_points == @player2_points ? s + "-All" : s + "-" + p[@player2_points]
+    else
+      if (@player1_points == @player2_points)
+        "Deuce"
+      else
+        s = @player1_points > @player2_points ? @player1_name : @player2_name
+        (@player1_points-@player2_points)*(@player1_points-@player2_points) == 1 ? "Advantage " + s : "Win for " + s
+      end
+    end
+  end
 end
 
 class TennisGame1 < TennisGame
@@ -188,34 +217,5 @@ class TennisGame2 < TennisGame
   end
 end
 
-class TennisGame3 < TennisGame
-  def initialize(player1Name, player2Name)
-    @player1_name = player1Name
-    @player2_name = player2Name
-    @player1_points = 0
-    @player2_points = 0
-  end
-      
-  def won_point(n)
-    if n == @player1_name
-        @player1_points += 1
-    else
-        @player2_points += 1
-    end
-  end
-  
-  def score
-    if (@player1_points < 4 and @player2_points < 4) and (@player1_points + @player2_points < 6)
-      p = ["Love", "Fifteen", "Thirty", "Forty"]
-      s = p[@player1_points]
-      @player1_points == @player2_points ? s + "-All" : s + "-" + p[@player2_points]
-    else
-      if (@player1_points == @player2_points)
-        "Deuce"
-      else
-        s = @player1_points > @player2_points ? @player1_name : @player2_name
-        (@player1_points-@player2_points)*(@player1_points-@player2_points) == 1 ? "Advantage " + s : "Win for " + s
-      end
-    end
-  end
+class TennisGame3 < TennisGame  
 end

@@ -1,7 +1,7 @@
 class TennisGame
 end
 
-class TennisGame1
+class TennisGame1 < TennisGame
 
   def initialize(player1Name, player2Name)
     @player1Name = player1Name
@@ -58,7 +58,7 @@ class TennisGame1
   end
 end
 
-class TennisGame2
+class TennisGame2 < TennisGame
   def initialize(player1Name, player2Name)
     @player1Name = player1Name
     @player2Name = player2Name
@@ -188,7 +188,7 @@ class TennisGame2
   end
 end
 
-class TennisGame3
+class TennisGame3 < TennisGame
   def initialize(player1Name, player2Name)
     @p1N = player1Name
     @p2N = player2Name

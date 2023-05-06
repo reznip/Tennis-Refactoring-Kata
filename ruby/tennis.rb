@@ -1,3 +1,5 @@
+class TennisGame
+end
 
 class TennisGame1
 

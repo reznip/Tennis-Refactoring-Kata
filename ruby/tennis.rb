@@ -6,12 +6,8 @@ class TennisGame
     @player2_points = 0
   end
       
-  def won_point(n)
-    if n == @player1_name
-        @player1_points += 1
-    else
-        @player2_points += 1
-    end
+  def won_point(player_name)
+    instance_variable_set("@#{player_name}_points", instance_variable_get("@#{player_name}_points")+1)
   end
   
   def score

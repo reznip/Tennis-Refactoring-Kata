@@ -19,8 +19,8 @@ class TennisGame
       if (@player1_points == @player2_points)
         "Deuce"
       else
-        s = @player1_points > @player2_points ? @player1_name : @player2_name
-        (@player1_points-@player2_points)*(@player1_points-@player2_points) == 1 ? "Advantage " + s : "Win for " + s
+        leading_or_winner_name = @player1_points > @player2_points ? @player1_name : @player2_name
+        (@player1_points-@player2_points)*(@player1_points-@player2_points) == 1 ? "Advantage " + leading_or_winner_name : "Win for " + leading_or_winner_name
       end
     end
   end
